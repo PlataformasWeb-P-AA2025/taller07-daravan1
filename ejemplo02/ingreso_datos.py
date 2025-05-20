@@ -31,7 +31,7 @@ with open("data/datos_jugadores.txt", "r", encoding="utf-8") as archivo:
         nombre_club, posicion, dorsal, nombre = linea.strip().split(";") 
         # Se busca el club correspondiente al jugador por su nombre
         club = session.query(Club).filter_by(nombre=nombre_club).one()
-        #Se relaciona el jugador con el club
+        #Se relaciona el jugador con el clubs
         jugador = Jugador(nombre=nombre, dorsal=int(dorsal), posicion=posicion, club_id=club.id) 
         session.add(jugador)
 
